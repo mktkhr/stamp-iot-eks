@@ -12,3 +12,7 @@
 * `aws eks update-kubeconfig --name <クラスター名>--region <リージョン>`
   * kubeconfig が更新される
 * `kubectl get pods -A` などを実行できることを確認する
+
+#### システム構成図
+
+![システム構成図](document/eks.svg)
