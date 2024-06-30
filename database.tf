@@ -94,7 +94,7 @@ resource "aws_security_group_rule" "redis-sgr" {
 
 resource "aws_elasticache_replication_group" "redis" {
   replication_group_id          = var.redis_cluster_id
-  node_type                     = "cache.t2.micro"
+  node_type                     = "cache.t3.micro"
   engine_version                = "7.1"
   port                          = 6379
   subnet_group_name             = aws_elasticache_subnet_group.redis-subg.name
@@ -102,6 +102,7 @@ resource "aws_elasticache_replication_group" "redis" {
   automatic_failover_enabled    = true
   num_node_groups         = 1
   replicas_per_node_group = 1
+  multi_az_enabled        = false
 
   description = "Redis Replicaiton Group"
   
